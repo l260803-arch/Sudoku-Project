@@ -14,7 +14,7 @@ int main() {
 			row = mousePos.y / 60;
 		}
 		ClearBackground(RAYWHITE);
-		for (int i = 0;i < 9;i++) {
+		for (int i = 0;i < 9;i++) 
 			DrawLine(i * 60, 0, i * 60, 540, BLACK);
 			DrawLine(0, i * 60, 540, i * 60, BLACK);
 		}

@@ -28,6 +28,7 @@ int main() {
 		EndDrawing();
 	}
 	CloseWindow();
+	//this is our program code
 }
 
 

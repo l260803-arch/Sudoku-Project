@@ -27,23 +27,41 @@ int main() {
 		for(int i=0;i<=9;i++){
 			float thickness;
 			if (i % 3 == 0)
-				thickness = 4;
+				thickness = 2;
 			else
 				thickness = 1;
-			DrawLineEx(
-				Vector2{(float)startX,(float)(startY+i*cellSize)},
-				Vector2{(float)(startX+9*cellSize),
-					(float)(startY+i*cellSize)},
+			if (thickness == 2) {
+				DrawLineEx(
+					Vector2{ (float)startX,(float)(startY + i * cellSize) },
+					Vector2{ (float)(startX + 9 * cellSize),
+						(float)(startY + i * cellSize) },
 					thickness,
 					BLACK
-			);
-			DrawLineEx(
-				Vector2{(float)(startX+i*cellSize),(float)startY},
-				Vector2{(float)(startX+i*cellSize),
-					(float)(startY+9*cellSize)},
+				);
+				DrawLineEx(
+					Vector2{ (float)(startX + i * cellSize),(float)startY },
+					Vector2{ (float)(startX + i * cellSize),
+						(float)(startY + 9 * cellSize) },
 					thickness,
 					BLACK
-			);	
+				);
+			}
+			else {
+				DrawLineEx(
+					Vector2{ (float)startX,(float)(startY + i * cellSize) },
+					Vector2{ (float)(startX + 9 * cellSize),
+						(float)(startY + i * cellSize) },
+					thickness,
+					LIGHTGRAY
+				);
+				DrawLineEx(
+					Vector2{ (float)(startX + i * cellSize),(float)startY },
+					Vector2{ (float)(startX + i * cellSize),
+						(float)(startY + 9 * cellSize) },
+					thickness,
+					LIGHTGRAY
+				);
+			}
 		}
 		EndDrawing();
 	}

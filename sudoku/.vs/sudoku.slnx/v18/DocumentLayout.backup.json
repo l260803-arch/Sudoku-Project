@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Muhammad Hassan\\Desktop\\sudoku\\",
+  "WorkspaceRootPath": "C:\\Users\\Muhammad Hassan\\Documents\\GitHub\\Sudoku-Project\\sudoku\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2B8D0279-961A-4D9F-A840-872709582249}|sudoku\\sudoku.vcxproj|C:\\Users\\Muhammad Hassan\\Desktop\\sudoku\\sudoku\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{2B8D0279-961A-4D9F-A840-872709582249}|sudoku\\sudoku.vcxproj|C:\\Users\\Muhammad Hassan\\Documents\\GitHub\\Sudoku-Project\\sudoku\\sudoku\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{2B8D0279-961A-4D9F-A840-872709582249}|sudoku\\sudoku.vcxproj|solutionrelative:sudoku\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -24,11 +24,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\Muhammad Hassan\\Desktop\\sudoku\\sudoku\\main.cpp",
+              "DocumentMoniker": "C:\\Users\\Muhammad Hassan\\Documents\\GitHub\\Sudoku-Project\\sudoku\\sudoku\\main.cpp",
               "RelativeDocumentMoniker": "sudoku\\main.cpp",
-              "ToolTip": "C:\\Users\\Muhammad Hassan\\Desktop\\sudoku\\sudoku\\main.cpp",
+              "ToolTip": "C:\\Users\\Muhammad Hassan\\Documents\\GitHub\\Sudoku-Project\\sudoku\\sudoku\\main.cpp",
               "RelativeToolTip": "sudoku\\main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-10-06T13:28:29.481Z",
               "EditorCaption": ""

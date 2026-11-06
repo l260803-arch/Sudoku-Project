@@ -1,7 +1,7 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\users\\muhammad hassan\\desktop\\sudoku\\sudoku\\main.cpp",
+        "Source": "c:\\users\\muhammad hassan\\documents\\github\\sudoku-project\\sudoku\\sudoku\\main.cpp",
         "ProvidedModule": "",
         "Includes": [
             "c:\\good\\raylib-6.0_win64_msvc16\\include\\raylib.h",

@@ -4,7 +4,7 @@ using namespace std;
 int main() {
 	InitWindow(540, 540, "Sudoku");
 	InitAudioDevice();
-	Sound click = LoadSound("C:\\Users\\Muhammad Hassan\\Downloads\\click.wav");
+	Sound click = LoadSound("click.wav");
 	int arr[9][9] = { 0 };
 	int row = -1;
 	int column = -1;

@@ -14,7 +14,7 @@ int main() {
 			row = mousePos.y / 60;
 		}
 		ClearBackground(RAYWHITE);
-		for (int i = 0;i < 9;i++) 
+	for (int i = 0;i < 9;i++){
 			DrawLine(i * 60, 0, i * 60, 540, BLACK);
 			DrawLine(0, i * 60, 540, i * 60, BLACK);
 		}
@@ -25,9 +25,41 @@ int main() {
 				}
 			}
 		}
+		int startX=0;
+		int startY=0;
+		int cellSize=60;
+		for(int i=0;i<=9;i++){
+			float thickness;
+			if(i%3==0)
+			thickness=4;
+			else
+			thickness=1.5;
+			//horizontal lines
+			DrawLineEx(
+				Vector2{(float)startX,(float)(startY+i*cellSize)},
+				Vector2{(float)(startX+9*cellSize),
+					(float)(startY+i*cellSize)},
+					thickness,
+					BLACK
+
+			);
+			//vertical lines
+			DrawLineEx(
+				Vector2{(float)(startX+i*cellSize),(float)startY},
+				Vector2{(float)(startX+i*cellSize),
+					(float)(startY+9*cellSize)},
+					thickness,
+					BLACK
+			);
+			
+		}
+
+
 		EndDrawing();
 	}
 	CloseWindow();
+
+
 	
 }
 

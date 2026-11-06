@@ -32,8 +32,6 @@ int main() {
 			float thickness;
 			if(i%3==0)
 			thickness=4;
-			else
-			thickness=1.5;
 			//horizontal lines
 			DrawLineEx(
 				Vector2{(float)startX,(float)(startY+i*cellSize)},

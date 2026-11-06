@@ -14,10 +14,6 @@ int main() {
 			row = mousePos.y / 60;
 		}
 		ClearBackground(RAYWHITE);
-	for (int i = 0;i < 9;i++){
-			DrawLine(i * 60, 0, i * 60, 540, BLACK);
-			DrawLine(0, i * 60, 540, i * 60, BLACK);
-		}
 		for (int i = 0;i < 9;i++) {
 			for (int j = 0;j < 9;j++) {
 				if (arr[i][j] != 0) {
@@ -30,35 +26,28 @@ int main() {
 		int cellSize=60;
 		for(int i=0;i<=9;i++){
 			float thickness;
-			if(i%3==0)
-			thickness=4;
-			//horizontal lines
+			if (i % 3 == 0)
+				thickness = 4;
+			else
+				thickness = 1;
 			DrawLineEx(
 				Vector2{(float)startX,(float)(startY+i*cellSize)},
 				Vector2{(float)(startX+9*cellSize),
 					(float)(startY+i*cellSize)},
 					thickness,
 					BLACK
-
 			);
-			//vertical lines
 			DrawLineEx(
 				Vector2{(float)(startX+i*cellSize),(float)startY},
 				Vector2{(float)(startX+i*cellSize),
 					(float)(startY+9*cellSize)},
 					thickness,
 					BLACK
-			);
-			
+			);	
 		}
-
-
 		EndDrawing();
 	}
-	CloseWindow();
-
-
-	
+	CloseWindow();	
 }
 
 

@@ -3,6 +3,8 @@
 using namespace std;
 int main() {
 	InitWindow(540, 540, "Sudoku");
+	InitAudioDevice();
+	Sound click = LoadSound("C:\\Users\\Muhammad Hassan\\Downloads\\click.wav");
 	int arr[9][9] = { 0 };
 	int row = -1;
 	int column = -1;
@@ -12,6 +14,7 @@ int main() {
 			Vector2 mousePos = GetMousePosition();
 			column = mousePos.x / 60;
 			row = mousePos.y / 60;
+			PlaySound(click);
 		}
 		ClearBackground(RAYWHITE);
 		for (int i = 0;i < 9;i++) {
@@ -21,10 +24,10 @@ int main() {
 				}
 			}
 		}
-		int startX=0;
-		int startY=0;
-		int cellSize=60;
-		for(int i=0;i<=9;i++){
+		int startX = 0;
+		int startY = 0;
+		int cellSize = 60;
+		for (int i = 0;i <= 9;i++) {
 			float thickness;
 			if (i % 3 == 0)
 				thickness = 2;
@@ -65,10 +68,10 @@ int main() {
 		}
 		EndDrawing();
 	}
-	CloseWindow();	
+	UnloadSound(click);
+	CloseAudioDevice();
+	CloseWindow();
 }
-
-
 
 
 

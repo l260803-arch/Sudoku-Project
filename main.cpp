@@ -36,14 +36,14 @@ int main() {
 					Vector2{ (float)(startX + 9 * cellSize),
 						(float)(startY + i * cellSize) },
 					thickness,
-					BLACK
+					DARKGREEN
 				);
 				DrawLineEx(
 					Vector2{ (float)(startX + i * cellSize),(float)startY },
 					Vector2{ (float)(startX + i * cellSize),
 						(float)(startY + 9 * cellSize) },
 					thickness,
-					BLACK
+					DARKGREEN
 				);
 			}
 			else {

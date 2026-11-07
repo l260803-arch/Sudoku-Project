@@ -8,6 +8,8 @@ int main() {
 	int arr[9][9] = { 0 };
 	int row = -1;
 	int column = -1;
+	int i = 0, j = 0;
+	int number;
 	while (!(WindowShouldClose())) {
 		BeginDrawing();
 		if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
@@ -17,6 +19,41 @@ int main() {
 			PlaySound(click);
 		}
 		ClearBackground(RAYWHITE);
+
+		if (i <= 8) {
+			if (IsKeyPressed(KEY_ONE))
+				number = 1;
+			else if (IsKeyPressed(KEY_TWO))
+				number = 2;
+			else if (IsKeyPressed(KEY_THREE))
+				number = 3;
+			else if (IsKeyPressed(KEY_FOUR))
+				number = 4;
+			else if (IsKeyPressed(KEY_FIVE))
+				number = 5;
+			else if (IsKeyPressed(KEY_SIX))
+				number = 6;
+			else if (IsKeyPressed(KEY_SEVEN))
+				number = 7;
+			else if (IsKeyPressed(KEY_EIGHT))
+				number = 8;
+			else if (IsKeyPressed(KEY_NINE))
+				number = 9;
+			else
+				number = 0;
+			if (number != 0) {
+				arr[i][j] = number;
+				
+				if (j < 8) 
+					j++;
+
+				else {
+					j = 0;
+					i++;
+				}
+			}
+		}
+
 		for (int i = 0;i < 9;i++) {
 			for (int j = 0;j < 9;j++) {
 				if (arr[i][j] != 0) {
@@ -72,6 +109,5 @@ int main() {
 	CloseAudioDevice();
 	CloseWindow();
 }
-
 
 

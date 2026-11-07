@@ -1,13 +1,39 @@
 #include"raylib.h"
+#include<cstdlib>
+#include<ctime>
 #include<iostream>
 using namespace std;
 int main() {
 	InitWindow(540, 540, "Sudoku");
 	InitAudioDevice();
 	Sound click = LoadSound("click.wav");
-	int arr[9][9] = { 0 };
+	int easy[9][9];
+	int normal[9][9];
+	int hard[9][9];
+	int arr[9][9]= {
+		{7,3,5,6,1,4,8,9,2},
+		{8,4,2,9,7,3,5,6,1},
+		{9,6,1,2,8,5,3,7,4},
+		{2,8,6,3,4,9,1,5,7},
+		{4,1,3,8,5,7,9,2,6},
+		{5,7,9,1,2,6,4,3,8},
+		{1,5,7,4,9,2,6,8,3},
+		{6,9,4,7,3,8,2,1,5},
+		{3,2,8,5,6,1,7,4,9}
+	};
+	srand(time(0));
 	int row = -1;
 	int column = -1;
+	int empty = 35;
+	int count = 0;
+	while (count < empty) {
+		int randomrow = rand() % 9;
+		int randomcolumn = rand() % 9;
+		if (arr[randomrow][randomcolumn] != 0) {
+			arr[randomrow][randomcolumn] = 0;
+			count++;
+		}
+	}
 	while (!(WindowShouldClose())) {
 		BeginDrawing();
 		if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {

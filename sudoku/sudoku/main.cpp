@@ -3,13 +3,18 @@
 #include<ctime>
 #include<iostream>
 using namespace std;
+bool rowcheck(int a[9][9], int num, int row, int column) {
+	for (column = 0;column < 9;column++) {
+		if (a[row][column] == num)
+			return false;
+	}
+	return true;
+}
 int main() {
 	InitWindow(540, 540, "Sudoku");
 	InitAudioDevice();
 	Sound click = LoadSound("click.wav");
-	int easy[9][9];
-	int normal[9][9];
-	int hard[9][9];
+	Sound blunder = LoadSound("wrong.mp3");
 	int arr[9][9]= {
 		{7,3,5,6,1,4,8,9,2},
 		{8,4,2,9,7,3,5,6,1},
@@ -24,8 +29,9 @@ int main() {
 	srand(time(0));
 	int row = -1;
 	int column = -1;
-	int empty = 35;
+	int empty = 50;
 	int count = 0;
+	bool check;
 	while (count < empty) {
 		int randomrow = rand() % 9;
 		int randomcolumn = rand() % 9;
@@ -43,8 +49,9 @@ int main() {
 			PlaySound(click);
 		}
 		ClearBackground(RAYWHITE);
-			if (IsKeyPressed(KEY_ONE))
+		    if (IsKeyPressed(KEY_ONE)) {
 				arr[row][column] = 1;
+		    }
 			else if (IsKeyPressed(KEY_TWO))
 				arr[row][column] = 2;
 			else if (IsKeyPressed(KEY_THREE))
@@ -114,8 +121,10 @@ int main() {
 			EndDrawing();
 	}
 	UnloadSound(click);
+	UnloadSound(blunder);
 	CloseAudioDevice();
 	CloseWindow();
 }
+
 
 

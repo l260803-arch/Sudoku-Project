@@ -4,9 +4,11 @@
 #include<iostream>
 using namespace std;
 bool rowcheck(int a[9][9], int num, int row, int column) {
-	for (column = 0;column < 9;column++) {
-		if (a[row][column] == num)
-			return false;
+	for (int c = 0;c < 9;c++) {
+		if (c != column) {
+			if (a[row][c] == num)
+				return false;
+		}
 	}
 	return true;
 }

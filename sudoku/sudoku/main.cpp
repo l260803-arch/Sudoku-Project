@@ -30,6 +30,21 @@ bool rowcheck(int a[9][9], int num, int row, int column) {
 	}
 	return true;
 }
+bool colunmcheck(int a[9][9], int num, int colunm, int row) {
+	int w, x;
+	for (int colunm = 0;colunm < 9;colunm++) {
+		for (int i = 0;i < 9;i++) {
+			w = a[i][colunm];
+			for (int i2 = i + 1;i2 < 9;i2++) {
+				x = a[i2][colunm];
+				if (w == x) { 
+					return false; 
+				}
+			}
+		}
+	}
+	return true;
+}
 int main() {
 	InitWindow(540, 540, "Sudoku");
 	InitAudioDevice();

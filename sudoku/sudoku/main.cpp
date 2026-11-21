@@ -3,6 +3,24 @@
 #include<ctime>
 #include<iostream>
 using namespace std;
+bool checkBox(int board[9][9],int row,int column){
+	int startRow=(row/3)*3;
+	int startColumn=(column/3)*3;
+	for(int i=startRow;i<startRow+3;i++){
+		for(int j=startColumn;j<startColumn+3;j++){
+			for(int k=startRow;k<startRow+3;k++){
+				for(int l=startColumn;l<startColumn+3;l++){
+					if((i!=k||j!=l)&& board[i][j]==board[k][l])
+					{
+						return false;
+					}
+				}
+			}
+		}
+	}
+	return true;
+}
+
 bool rowcheck(int a[9][9], int num, int row, int column) {
 	for (int c = 0;c < 9;c++) {
 		if (c != column) {

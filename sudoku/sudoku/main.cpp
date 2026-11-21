@@ -3,18 +3,22 @@
 #include<ctime>
 #include<iostream>
 using namespace std;
-bool checkBox(int a[9][9],int row,int column){
+void reappear(int a[9][9]) {
+	for (int i = 0;i < 9;i++) {
+		for (int j = 0;j < 9;j++) {
+			cout << a[i][j] << " ";
+		}
+		cout << endl;
+	}
+}
+bool checkBox(int a[9][9],int row, int num, int column){
 	int startRow=(row/3)*3;
 	int startColumn=(column/3)*3;
 	for(int i=startRow;i<startRow+3;i++){
 		for(int j=startColumn;j<startColumn+3;j++){
-			for(int k=startRow;k<startRow+3;k++){
-				for(int l=startColumn;l<startColumn+3;l++){
-					if((i!=k||j!=l)&& a[i][j]==a[k][l])
-					{
-						return false;
-					}
-				}
+			if (i != row || j != column) {
+				if (a[i][j] == num)
+					return false;
 			}
 		}
 	}
@@ -30,20 +34,35 @@ bool rowcheck(int a[9][9], int num, int row, int column) {
 	}
 	return true;
 }
-bool colunmcheck(int a[9][9], int num, int colunm, int row) {
-	int w, x;
-	for (int colunm = 0;colunm < 9;colunm++) {
-		for (int i = 0;i < 9;i++) {
-			w = a[i][colunm];
-			for (int i2 = i + 1;i2 < 9;i2++) {
-				x = a[i2][colunm];
-				if (w == x) { 
-					return false; 
-				}
-			}
+bool columncheck(int a[9][9], int num, int row, int column) {
+	for (int r = 0;r < 9;r++) {
+		if (r != row) {
+			if (a[r][column] == num)
+				return false;
 		}
 	}
 	return true;
+}
+bool dead(int a[9][9]) {
+	for (int i = 0;i < 9;i++) {
+		for (int j = 0;j < 9;j++) {
+			if (a[i][j] == 0) {
+				bool go = false;
+				for (int k = 1;k <= 9;k++) {
+					bool check1 = rowcheck(a, k, i, j);
+					bool check2 = columncheck(a, k, i, j);
+					bool check3 = checkBox(a, i, k, j);
+					if (check1 && check2 && check3) {
+						go = true;
+						break;
+					}
+				}
+				if (go == false)
+					return true;
+			}
+		}
+	}
+	return false;
 }
 int main() {
 	InitWindow(540, 540, "Sudoku");
@@ -85,24 +104,144 @@ int main() {
 		}
 		ClearBackground(RAYWHITE);
 		    if (IsKeyPressed(KEY_ONE)) {
-				arr[row][column] = 1;
+				bool check1 = rowcheck(arr, 1, row, column);
+				bool check2 = columncheck(arr, 1, row, column);
+				bool check3 = checkBox(arr, row, 1, column);
+				if (check1 && check2 && check3) {
+					arr[row][column] = 1;
+					bool final = dead(arr);
+					if (final == true) {
+						reappear(arr);
+						PlaySound(blunder);
+					}
+				}
+				else
+					PlaySound(blunder);
 		    }
-			else if (IsKeyPressed(KEY_TWO))
-				arr[row][column] = 2;
-			else if (IsKeyPressed(KEY_THREE))
-				arr[row][column] = 3;
-			else if (IsKeyPressed(KEY_FOUR))
-				arr[row][column] = 4;
-			else if (IsKeyPressed(KEY_FIVE))
-				arr[row][column] = 5;
-			else if (IsKeyPressed(KEY_SIX))
-				arr[row][column] = 6;
-			else if (IsKeyPressed(KEY_SEVEN))
-				arr[row][column] = 7;
-			else if (IsKeyPressed(KEY_EIGHT))
-				arr[row][column] = 8;
-			else if (IsKeyPressed(KEY_NINE))
-				arr[row][column] = 9;
+			else if (IsKeyPressed(KEY_TWO)) {
+				bool check1 = rowcheck(arr, 2, row, column);
+				bool check2 = columncheck(arr, 2, row, column);
+				bool check3 = checkBox(arr, row, 2, column);
+				if (check1 && check2 && check3) {
+					arr[row][column] = 2;
+					bool final = dead(arr);
+					if (final == true) {
+						reappear(arr);
+						PlaySound(blunder);
+					}
+				}
+				else
+					PlaySound(blunder);
+			}
+			else if (IsKeyPressed(KEY_THREE)) {
+				bool check1 = rowcheck(arr, 3, row, column);
+				bool check2 = columncheck(arr, 3, row, column);
+				bool check3 = checkBox(arr, row, 3, column);
+				if (check1 && check2 && check3) {
+					arr[row][column] = 3;
+					bool final = dead(arr);
+					if (final == true) {
+						reappear(arr);
+						PlaySound(blunder);
+					}
+				}
+				else
+					PlaySound(blunder);
+			}
+				
+			else if (IsKeyPressed(KEY_FOUR)) {
+				bool check1 = rowcheck(arr, 4, row, column);
+				bool check2 = columncheck(arr, 4, row, column);
+				bool check3 = checkBox(arr, row, 4, column);
+				if (check1 && check2 && check3) {
+					arr[row][column] = 4;
+					bool final = dead(arr);
+					if (final == true) {
+						reappear(arr);
+						PlaySound(blunder);
+					}
+				}
+				else
+					PlaySound(blunder);
+			}
+			else if (IsKeyPressed(KEY_FIVE)) {
+				bool check1 = rowcheck(arr, 5, row, column);
+				bool check2 = columncheck(arr, 5, row, column);
+				bool check3 = checkBox(arr, row, 5, column);
+				if (check1 && check2 && check3) {
+					arr[row][column] = 5;
+					bool final = dead(arr);
+					if (final == true) {
+						reappear(arr);
+						PlaySound(blunder);
+					}
+				}
+				else
+					PlaySound(blunder);
+			}	
+			else if (IsKeyPressed(KEY_SIX)) {
+				bool check1 = rowcheck(arr, 6, row, column);
+				bool check2 = columncheck(arr, 6, row, column);
+				bool check3 = checkBox(arr, row, 6, column);
+				if (check1 && check2 && check3) {
+					arr[row][column] = 6;
+					bool final = dead(arr);
+					if (final == true) {
+						reappear(arr);
+						PlaySound(blunder);
+					}
+				}
+				else
+					PlaySound(blunder);
+			}	
+			else if (IsKeyPressed(KEY_SEVEN)) {
+				bool check1 = rowcheck(arr, 7, row, column);
+				bool check2 = columncheck(arr, 7, row, column);
+				bool check3 = checkBox(arr, row, 7, column);
+				if (check1 && check2 && check3) {
+					arr[row][column] = 7;
+					bool final = dead(arr);
+					if (final == true) {
+						reappear(arr);
+						PlaySound(blunder);
+					}
+				}
+				else
+					PlaySound(blunder);
+			}
+			
+			else if (IsKeyPressed(KEY_EIGHT)) {
+				bool check1 = rowcheck(arr, 8, row, column);
+				bool check2 = columncheck(arr, 8, row, column);
+				bool check3 = checkBox(arr, row, 8, column);
+				if (check1 && check2 && check3) {
+					arr[row][column] = 8;
+					bool final = dead(arr);
+					if (final == true) {
+						reappear(arr);
+						PlaySound(blunder);
+					}
+				}
+				else
+					PlaySound(blunder);
+			}
+				
+			else if (IsKeyPressed(KEY_NINE)) {
+				bool check1 = rowcheck(arr, 9, row, column);
+				bool check2 = columncheck(arr, 9, row, column);
+				bool check3 = checkBox(arr, row, 9, column);
+				if (check1 && check2 && check3) {
+					arr[row][column] = 9;
+					bool final = dead(arr);
+					if (final == true) {
+						reappear(arr);
+						PlaySound(blunder);
+					}
+				}
+				else
+					PlaySound(blunder);
+			}
+				
 
 		for (int i = 0;i < 9;i++) {
 			for (int j = 0;j < 9;j++) {

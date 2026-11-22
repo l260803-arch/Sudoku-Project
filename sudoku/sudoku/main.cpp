@@ -29,32 +29,33 @@ void shuffleSudoku(int sudoku[9][9]){
 		}
 	}
 	//swap columns
-	for(int i=0;i<9;i+=3){
-		int c1=i+rand()%3;
-		int c2=i+rand()%3;
-		for(int i=0;i<9;i++){
-			swap(sudoku[i][c1],sudoku[i][c2]);
-		for(int j=0;j<9;j++){
-			swap(sudoku[j][c1],sudoku[j][c2]);
+	for (int i = 0;i < 9;i += 3) {
+		int c1 = i + rand() % 3;
+		int c2 = i + rand() % 3;
+		for (int i = 0;i < 9;i++) {
+			swap(sudoku[i][c1], sudoku[i][c2]);
+			for (int j = 0;j < 9;j++) {
+				swap(sudoku[j][c1], sudoku[j][c2]);
 
+			}
+
+		}
+		//random swapping
+		int n1 = rand() % 9 + 1;
+		int n2 = rand() % 9 + 1;
+		for (int i = 0;i < 9;i++) {
+			for (int j = 0;j < 9;j++) {
+				if (sudoku[i][j] == n1)
+				{
+					sudoku[i][j] = n2;
+				}
+				else if (sudoku[i][j] == n2) {
+					sudoku[i][j] = n1;
+				}
+			}
 		}
 
 	}
-	//random swapping
-	int n1=rand()%9+1;
-	int n2=rand()%9+1;
-	for(int i=0;i<9;i++){
-		for(int j=0;j<9;j++){
-			if(sudoku[i][j]==n1)
-			{
-				sudoku[i][j]=n2;
-			}
-			else if(sudoku[i][j]==n2){
-				sudoku[i][j]=n1;
-			}
-		}
-	}
-	
 
 }
 

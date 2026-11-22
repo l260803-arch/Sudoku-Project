@@ -33,7 +33,7 @@ void shuffleSudoku(int sudoku[9][9]){
 		int c1=i+rand()%3;
 		int c2=i+rand()%3;
 		for(int i=0;i<9;i++){
-			swap(sudoku[j][c1],sudoku[j][c2]);
+			swap(sudoku[i][c1],sudoku[i][c2]);
 		}
 
 	}

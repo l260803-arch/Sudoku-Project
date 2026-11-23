@@ -1,7 +1,6 @@
 ﻿  main.cpp
-C:\Users\Muhammad Hassan\Documents\GitHub\Sudoku-Project\sudoku\sudoku\main.cpp(20,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Muhammad Hassan\Documents\GitHub\Sudoku-Project\sudoku\sudoku\main.cpp(87,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Muhammad Hassan\Documents\GitHub\Sudoku-Project\sudoku\sudoku\main.cpp(108,24): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Muhammad Hassan\Documents\GitHub\Sudoku-Project\sudoku\sudoku\main.cpp(109,21): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Muhammad Hassan\Documents\GitHub\Sudoku-Project\sudoku\sudoku\main.cpp(92,7): warning C4101: 'check': unreferenced local variable
+C:\Users\Muhammad Hassan\Documents\GitHub\Sudoku-Project\sudoku\sudoku\main.cpp(20,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Muhammad Hassan\Documents\GitHub\Sudoku-Project\sudoku\sudoku\main.cpp(98,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Muhammad Hassan\Documents\GitHub\Sudoku-Project\sudoku\sudoku\main.cpp(110,24): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Muhammad Hassan\Documents\GitHub\Sudoku-Project\sudoku\sudoku\main.cpp(111,21): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
   sudoku.vcxproj -> C:\Users\Muhammad Hassan\Documents\GitHub\Sudoku-Project\sudoku\x64\Debug\sudoku.exe

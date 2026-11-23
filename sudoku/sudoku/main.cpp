@@ -19,11 +19,11 @@ bool checker(int num, int row, int column, int a[9][9]) {
 void shuffleSudoku(int sudoku[9][9]){
 	srand(time(0));
 	// swap rows
-	for(int i=0;i<9;i+=3){
-		int r1=i+rand()%3;
-		int r2=i+rand()%3;
-		for(int j=0;j<9;j++){
-			swap(sudoku[r1][j],sudoku[r2][j]);
+	for (int i = 0;i < 9;i += 3) {
+		int r1 = i + rand() % 3;
+		int r2 = i + rand() % 3;
+		for (int j = 0;j < 9;j++) {
+			swap(sudoku[r1][j], sudoku[r2][j]);
 
 
 		}
@@ -114,33 +114,32 @@ int main() {
 		ClearBackground(RAYWHITE);
 		if (screen == true)
 		{
-			//Diffuculty level window appears
+			
 			ClearBackground(BLACK);
 
 			DrawText("SUDOKU Game", 120, 30, 50, DARKGREEN);
-			DrawText("By", 250, 70, 20, DARKBLUE);
-			DrawText("Hassan", 250, 90, 20, DARKBLUE);
-			DrawText("Hashir", 250, 110, 20, DARKBLUE);
-			DrawText("Saad", 250, 130, 20, DARKBLUE);
-			DrawText("SELECT DIFFICULTY Level", 130, 170, 25, DARKBLUE);
+			DrawText("By", 250, 80, 20, DARKBLUE);
+			DrawText("Hassan", 250, 100, 20, DARKBLUE);
+			DrawText("Hashir", 250, 120, 20, DARKBLUE);
+			DrawText("Saad", 250, 140, 20, DARKBLUE);
+			DrawText("SELECT DIFFICULTY Level", 130, 170, 25, YELLOW);
 
-			// Easy button
 			DrawRectangle(140, 220, 300, 55, GREEN);
 			DrawText("EASY Level", 210, 235, 25, WHITE);
 
-			// Medium button
+			
 			DrawRectangle(140, 300, 300, 55, BLUE);
 			DrawText("MEDIUM Level", 210, 315, 25, WHITE);
 
-			// Hard button
+			
 			DrawRectangle(140, 380, 300, 55, RED);
 			DrawText("HARD Level", 210, 395, 25, WHITE);
 
-			// Mouse position
+			
 			int x = GetMouseX();
 			int y = GetMouseY();
 
-			// Check mouse click
+		
 			if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 			{
 				if (x >= 140 && x <= 440 &&

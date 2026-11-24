@@ -150,7 +150,7 @@ int main() {
 					copymaker(copy, arr);
 					shuffleSudoku(arr);
 					copymaker(arr, copy);
-					emptyboxes(0, 2, arr);
+					emptyboxes(0, 20, arr);
 					screen = false;
 				}
 

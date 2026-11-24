@@ -183,8 +183,9 @@ int main() {
 				bool go = checker(1, row, column, copy);
 				if (go) {
 					arr[row][column] = 1;
+					loosecount = 0;
 				}
-				else if(!go&&loosecount<3) {
+				else if(!go&&loosecount<5) {
 					PlaySound(blunder);
 					loosecount++;
 				}
@@ -193,15 +194,16 @@ int main() {
 					PlaySound(win);
 					success = true;
 				}
-				if (loosecount == 3)
+				if (loosecount == 5)
 					PlaySound(haww);
 			}
 			else if (IsKeyPressed(KEY_TWO)) {
 				bool go = checker(2, row, column, copy);
 				if (go) {
 					arr[row][column] = 2;
+					loosecount = 0;
 				}
-				else if (!go && loosecount < 3) {
+				else if (!go && loosecount < 5) {
 					PlaySound(blunder);
 					loosecount++;
 				}
@@ -210,15 +212,16 @@ int main() {
 					PlaySound(win);
 					success = true;
 				}
-				if (loosecount == 3)
+				if (loosecount == 5)
 					PlaySound(haww);
 			}
 			else if (IsKeyPressed(KEY_THREE)) {
 				bool go = checker(3, row, column, copy);
 				if (go) {
 					arr[row][column] = 3;
+					loosecount = 0;
 				}
-				else if (!go && loosecount < 3) {
+				else if (!go && loosecount < 5) {
 					PlaySound(blunder);
 					loosecount++;
 				}
@@ -227,7 +230,7 @@ int main() {
 					PlaySound(win);
 					success = true;
 				}
-				if (loosecount == 3)
+				if (loosecount == 5)
 					PlaySound(haww);
 			}
 
@@ -235,8 +238,9 @@ int main() {
 				bool go = checker(4, row, column, copy);
 				if (go) {
 					arr[row][column] = 4;
+					loosecount = 0;
 				}
-				else if (!go && loosecount < 3) {
+				else if (!go && loosecount < 5) {
 					PlaySound(blunder);
 					loosecount++;
 				}
@@ -245,15 +249,16 @@ int main() {
 					PlaySound(win);
 					success = true;
 				}
-				if (loosecount == 3)
+				if (loosecount == 5)
 					PlaySound(haww);
 			}
 			else if (IsKeyPressed(KEY_FIVE)) {
 				bool go = checker(5, row, column, copy);
 				if (go) {
 					arr[row][column] = 5;
+					loosecount = 0;
 				}
-				else if(!go&&loosecount<3) {
+				else if(!go&&loosecount<5) {
 					PlaySound(blunder);
 					loosecount++;
 				}
@@ -262,15 +267,16 @@ int main() {
 					PlaySound(win);
 					success = true;
 				}
-				if (loosecount == 3)
+				if (loosecount == 5)
 					PlaySound(haww);
 			}
 			else if (IsKeyPressed(KEY_SIX)) {
 				bool go = checker(6, row, column, copy);
 				if (go) {
 					arr[row][column] = 6;
+					loosecount = 0;
 				}
-				else if (!go && loosecount < 3) {
+				else if (!go && loosecount < 5) {
 					PlaySound(blunder);
 					loosecount++;
 				}
@@ -279,15 +285,16 @@ int main() {
 					PlaySound(win);
 					success = true;
 				}
-				if (loosecount == 3)
+				if (loosecount == 5)
 					PlaySound(haww);
 			}
 			else if (IsKeyPressed(KEY_SEVEN)) {
 				bool go = checker(7, row, column, copy);
 				if (go) {
 					arr[row][column] = 7;
+					loosecount = 0;
 				}
-				else if (!go && loosecount < 3) {
+				else if (!go && loosecount < 5) {
 					PlaySound(blunder);
 					loosecount++;
 				}
@@ -296,7 +303,7 @@ int main() {
 					PlaySound(win);
 					success = true;
 				}
-				if (loosecount == 3)
+				if (loosecount == 5)
 					PlaySound(haww);
 			}
 
@@ -304,8 +311,9 @@ int main() {
 				bool go = checker(8, row, column, copy);
 				if (go) {
 					arr[row][column] = 8;
+					loosecount = 0;
 				}
-				else if (!go && loosecount < 3) {
+				else if (!go && loosecount < 5) {
 					PlaySound(blunder);
 					loosecount++;
 				}
@@ -314,7 +322,7 @@ int main() {
 					PlaySound(win);
 					success = true;
 				}
-				if (loosecount == 3)
+				if (loosecount == 5)
 					PlaySound(haww);
 			}
 
@@ -322,8 +330,9 @@ int main() {
 				bool go = checker(9, row, column, copy);
 				if (go) {
 					arr[row][column] = 9;
+					loosecount = 0;
 				}
-				else if (!go && loosecount < 3) {
+				else if (!go && loosecount < 5) {
 					PlaySound(blunder);
 					loosecount++;
 				}
@@ -332,7 +341,7 @@ int main() {
 					PlaySound(win);
 					success = true;
 				}
-				if (loosecount == 3)
+				if (loosecount == 5)
 					PlaySound(haww);
 			}
 			for (int i = 0;i < 9;i++) {
@@ -401,7 +410,7 @@ int main() {
 				}
 			}
 		}
-		if (loosecount == 3) {
+		if (loosecount == 5) {
 			loose = true;
 		}
 		if (loose == true) {

@@ -27,6 +27,8 @@ The main sudoku board:
 ![Sudoku Board][play.PNG]
 The winning window
 ![Winning screen][end.PNG]
+The loosing window
+![Loosing Screen][loose.PNG]
 ======Prerequisites======
 Following are the points that are required for a user to follow in order to play this:
 a)The user must have a GUI operating system, such as MACOS, Windows and Linux.

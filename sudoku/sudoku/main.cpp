@@ -84,6 +84,9 @@ int main() {
 	Sound click = LoadSound("click.wav");
 	Sound blunder = LoadSound("wrong.mp3");
 	Sound win = LoadSound("win.mp3");
+	Sound haww = LoadSound("dumb.mp3");
+	int loosecount = 0;
+	bool loose = false;
 	int arr[9][9] = {
 		{ 7,3,5,6,1,4,8,9,2 },
 		{ 8,4,2,9,7,3,5,6,1 },
@@ -101,7 +104,6 @@ int main() {
 	bool screen = true;
 	int copy[9][9];
 	bool success = false;
-	shuffleSudoku(arr);
 	copymaker(arr, copy);
 	while (!(WindowShouldClose())) {
 		BeginDrawing();
@@ -145,13 +147,19 @@ int main() {
 				if (x >= 140 && x <= 440 &&
 					y >= 220 && y <= 275)
 				{
-					emptyboxes(0, 25, arr);
+					copymaker(copy, arr);
+					shuffleSudoku(arr);
+					copymaker(arr, copy);
+					emptyboxes(0, 2, arr);
 					screen = false;
 				}
 
 				else if (x >= 140 && x <= 440 &&
 					y >= 300 && y <= 355)
 				{
+					copymaker(copy, arr);
+					shuffleSudoku(arr);
+					copymaker(arr, copy);
 					emptyboxes(0, 40, arr);
 					screen = false;
 				}
@@ -159,6 +167,9 @@ int main() {
 				else if (x >= 140 && x <= 440 &&
 					y >= 380 && y <= 435)
 				{
+					copymaker(copy, arr);
+					shuffleSudoku(arr);
+					copymaker(arr, copy);
 					emptyboxes(0, 59, arr);
 					screen = false;
 				}
@@ -166,46 +177,58 @@ int main() {
 		}
 
 
-		else if(screen==false && success==false)
+		else if(screen==false && success==false && loose==false)
 		{
 			if (IsKeyPressed(KEY_ONE)) {
 				bool go = checker(1, row, column, copy);
 				if (go) {
 					arr[row][column] = 1;
 				}
-				else
+				else if(!go&&loosecount<3) {
 					PlaySound(blunder);
+					loosecount++;
+				}
 				bool final = fillcheck(arr);
 				if (final) {
 					PlaySound(win);
 					success = true;
 				}
+				if (loosecount == 3)
+					PlaySound(haww);
 			}
 			else if (IsKeyPressed(KEY_TWO)) {
 				bool go = checker(2, row, column, copy);
 				if (go) {
 					arr[row][column] = 2;
 				}
-				else
+				else if (!go && loosecount < 3) {
 					PlaySound(blunder);
+					loosecount++;
+				}
 				bool final = fillcheck(arr);
 				if (final) {
 					PlaySound(win);
 					success = true;
 				}
+				if (loosecount == 3)
+					PlaySound(haww);
 			}
 			else if (IsKeyPressed(KEY_THREE)) {
 				bool go = checker(3, row, column, copy);
 				if (go) {
 					arr[row][column] = 3;
 				}
-				else
+				else if (!go && loosecount < 3) {
 					PlaySound(blunder);
+					loosecount++;
+				}
 				bool final = fillcheck(arr);
 				if (final) {
 					PlaySound(win);
 					success = true;
 				}
+				if (loosecount == 3)
+					PlaySound(haww);
 			}
 
 			else if (IsKeyPressed(KEY_FOUR)) {
@@ -213,52 +236,68 @@ int main() {
 				if (go) {
 					arr[row][column] = 4;
 				}
-				else
+				else if (!go && loosecount < 3) {
 					PlaySound(blunder);
+					loosecount++;
+				}
 				bool final = fillcheck(arr);
 				if (final) {
 					PlaySound(win);
 					success = true;
 				}
+				if (loosecount == 3)
+					PlaySound(haww);
 			}
 			else if (IsKeyPressed(KEY_FIVE)) {
 				bool go = checker(5, row, column, copy);
 				if (go) {
 					arr[row][column] = 5;
 				}
-				else
+				else if(!go&&loosecount<3) {
 					PlaySound(blunder);
+					loosecount++;
+				}
 				bool final = fillcheck(arr);
 				if (final) {
 					PlaySound(win);
 					success = true;
 				}
+				if (loosecount == 3)
+					PlaySound(haww);
 			}
 			else if (IsKeyPressed(KEY_SIX)) {
 				bool go = checker(6, row, column, copy);
 				if (go) {
 					arr[row][column] = 6;
 				}
-				else
+				else if (!go && loosecount < 3) {
 					PlaySound(blunder);
+					loosecount++;
+				}
 				bool final = fillcheck(arr);
 				if (final) {
 					PlaySound(win);
 					success = true;
 				}
+				if (loosecount == 3)
+					PlaySound(haww);
 			}
 			else if (IsKeyPressed(KEY_SEVEN)) {
 				bool go = checker(7, row, column, copy);
 				if (go) {
 					arr[row][column] = 7;
 				}
-				else
+				else if (!go && loosecount < 3) {
 					PlaySound(blunder);
+					loosecount++;
+				}
 				bool final = fillcheck(arr);
 				if (final) {
 					PlaySound(win);
 					success = true;
 				}
+				if (loosecount == 3)
+					PlaySound(haww);
 			}
 
 			else if (IsKeyPressed(KEY_EIGHT)) {
@@ -266,13 +305,17 @@ int main() {
 				if (go) {
 					arr[row][column] = 8;
 				}
-				else
+				else if (!go && loosecount < 3) {
 					PlaySound(blunder);
+					loosecount++;
+				}
 				bool final = fillcheck(arr);
 				if (final) {
 					PlaySound(win);
 					success = true;
 				}
+				if (loosecount == 3)
+					PlaySound(haww);
 			}
 
 			else if (IsKeyPressed(KEY_NINE)) {
@@ -280,13 +323,17 @@ int main() {
 				if (go) {
 					arr[row][column] = 9;
 				}
-				else
+				else if (!go && loosecount < 3) {
 					PlaySound(blunder);
+					loosecount++;
+				}
 				bool final = fillcheck(arr);
 				if (final) {
 					PlaySound(win);
 					success = true;
 				}
+				if (loosecount == 3)
+					PlaySound(haww);
 			}
 			for (int i = 0;i < 9;i++) {
 				for (int j = 0;j < 9;j++) {
@@ -350,6 +397,26 @@ int main() {
 				if ((escapex >= 450 && escapex <= 530) && (escapey >= 80 && escapey <= 120)) {
 					success = false;
 					screen = true;
+					loosecount = 0;
+				}
+			}
+		}
+		if (loosecount == 3) {
+			loose = true;
+		}
+		if (loose == true) {
+			ClearBackground(BLACK);
+			DrawCircle(270, 270, 200, SKYBLUE);
+			DrawText("You Loose!", 140, 230, 50, WHITE);
+			DrawRectangle(450, 80, 80, 40, GREEN);
+			DrawText("Restart", 460, 90, 17, DARKBLUE);
+			int escapex = GetMouseX();
+			int escapey = GetMouseY();
+			if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
+				if ((escapex >= 450 && escapex <= 530) && (escapey >= 80 && escapey <= 120)) {
+					loose = false;
+					screen = true;
+					loosecount = 0;
 				}
 			}
 		}
@@ -357,6 +424,8 @@ int main() {
 	}
 	UnloadSound(click);
 	UnloadSound(blunder);
+	UnloadSound(win);
+	UnloadSound(haww);
 	CloseAudioDevice();
 	CloseWindow();
 }
